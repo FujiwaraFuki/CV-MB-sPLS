@@ -2,7 +2,7 @@ make.test.keepX <- function(X, v, ncomp, mode = 1) {
 
   if (mode == 1) {
 
-    x <- gtools::permutations(n = length(list),
+    x <- gtools::permutations(n = length(v),
                               r = length(X),
                               v = v,
                               repeats.allowed = TRUE)
@@ -21,7 +21,7 @@ make.test.keepX <- function(X, v, ncomp, mode = 1) {
 
   } else if (mode == 2) {
 
-    x <- gtools::permutations(n = length(list),
+    x <- gtools::permutations(n = length(v),
                               r = length(X)*ncomp,
                               v = v,
                               repeats.allowed=TRUE)

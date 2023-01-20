@@ -3,7 +3,7 @@ cv.block.spls <- function(X, Y, test.keepX, design, ncomp = 2, nrepeat = 1, fold
   res <- foreach(r=1:nrepeat,.packages=c("mixOmics","doParallel"),.combine = "rbind") %do% {
 
     set.seed(100)
-    fold_i <- sample(rep(1:fold, length.out = 84))
+    fold_i <- sample(rep(1:fold, length.out = length(Y)))
 
     cores <- detectCores()-1
     cl <- makeCluster(cores)
@@ -52,6 +52,7 @@ cv.block.spls <- function(X, Y, test.keepX, design, ncomp = 2, nrepeat = 1, fold
   } else if (eval.mode == "MSE") {
     list.keepX <- test.keepX[[which(MSE == max(MSE))]]
   }
+
   return(list(list.keepX = list.keepX, R = R, MSE = MSE))
 
 

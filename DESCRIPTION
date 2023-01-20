@@ -1,4 +1,4 @@
-Package: CVMBsPLS
+Package: tuneBlocksPLS
 Type: Package
 Title: Cross-Validation for Parameter Tuning of Multiblock sPLS
 Version: 0.0.0.9
