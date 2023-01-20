@@ -1,0 +1,11 @@
+Package: CVMBsPLS
+Type: Package
+Title: Cross-Validation for Parameter Tuning of Multiblock sPLS
+Version: 0.0.0.9
+Authors@R: person("Fuki Fujiwara", role = c("aut", "cre"), email = "fuki.fujiwara@riken.jp")
+Maintainer: Fuki Fujiwara <fuki.fujiwara@riken.jp>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
