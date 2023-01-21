@@ -2,7 +2,7 @@
 
 ## Install
 ```
-devtools::install_github("FujiwaraFuji/tuneBlocksPLS")
+devtools::install_github("FujiwaraFuki/tuneBlocksPLS")
 ```
 
 ## Read package
