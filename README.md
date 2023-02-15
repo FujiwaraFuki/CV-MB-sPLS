@@ -61,6 +61,7 @@ model <- block.spls(X, Y,
 
 # for details of the output, see https://www.rdocumentation.org/packages/mixOmics/versions/6.3.2/topics/block.spls
 
+pal <- c("#009E73","#F0E442","#E69F00","#0072B2")
 
 df <- foreach (i=1:length(X),.combine = "rbind") %do% {
   data.frame(name=selectVar(model)[[i]]$name, value=selectVar(model)[[i]]$value)
