@@ -60,4 +60,24 @@ model <- block.spls(X, Y,
                     design = design)
 
 # for details of the output, see https://www.rdocumentation.org/packages/mixOmics/versions/6.3.2/topics/block.spls
+
+
+df <- foreach (i=1:length(X),.combine = "rbind") %do% {
+  data.frame(name=selectVar(model)[[i]]$name, value=selectVar(model)[[i]]$value)
+}
+
+
+df <- df[order(df$value.var),]
+
+df$name <- factor(df$name, levels = df$name)
+
+ggplot(df, aes(name, value.var, fill=block)) +
+  geom_bar(stat = "identity")+ 
+  scale_fill_manual(values = pal)+
+  theme_classic()+
+  theme(axis.title.y=element_blank(),
+        axis.title.x=element_blank(),
+        legend.position = c(0.95,0.05), legend.justification = c(1, 0))+
+  #       axis.text.y=element_blank())+
+  coord_flip()
 ```
